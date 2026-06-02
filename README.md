@@ -6,9 +6,9 @@ An online shop platform where users can browse a veriety products and checkout t
 
 **[Report](https://docs.google.com/document/d/1lXkf_IMbnkQwdWAh6pFN5f-tm8f32dE3a94g0_Jl6bQ/edit?usp=sharing)**
 
-**[Github Repo](https://github.com/NoroffFEU/jsfw-2025-v1-sander-torgersen-jsf-ca)**
+**[Github Repo](https://github.com/SanderTorg/online-shop-JSF-santo)**
 
-**[Vercel Production Deplyment](https://jsfw-2025-v1-sander-torgersen-jsf-c.vercel.app/)**
+**[Vercel Production Deplyment](https://online-shop-jsf-santo.vercel.app/)**
 
 ## Features
 
