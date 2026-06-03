@@ -1,6 +1,6 @@
 "use client";
 
-import { Products } from "@/lib/types/types";
+import { Product } from "@/lib/types/types";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "../../ui/badge";
@@ -10,7 +10,7 @@ import { toast } from "sonner";
 import StarRating from "../../StarRating";
 
 interface ProductListItemProps {
-  product: Products;
+  product: Product;
 }
 
 export default function ProductListItem({ product }: ProductListItemProps) {
@@ -24,7 +24,6 @@ export default function ProductListItem({ product }: ProductListItemProps) {
     : 0;
 
   const handleAddToCart = (event: React.MouseEvent) => {
-    event.preventDefault();
     event.stopPropagation();
     addItem(product);
     toast.success(`${product.title} added to cart!`);

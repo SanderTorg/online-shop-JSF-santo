@@ -1,13 +1,14 @@
 "use client";
 
-import { Products } from "@/lib/types/types";
+import { Product } from "@/lib/types/types";
 import ProductListItem from "./ProductListItem";
 import SearchBar from "../../SearchBar";
 import { useCallback, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { motion } from "framer-motion";
 
 interface ProductListProps {
-  products: Products[];
+  products: Product[];
 }
 
 export default function ProductList({ products }: ProductListProps) {
@@ -55,11 +56,31 @@ export default function ProductList({ products }: ProductListProps) {
 
       <section>
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <motion.div
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+            initial="hidden"
+            animate="show"
+            variants={{
+              hidden: {},
+              show: { transition: { staggerChildren: 0.07 } },
+            }}
+          >
             {filteredProducts.map((product) => (
-              <ProductListItem key={product.id} product={product} />
+              <motion.div
+                key={product.id}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.35, ease: "easeOut" },
+                  },
+                }}
+              >
+                <ProductListItem product={product} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         ) : (
           <p className="py-12 text-center text-muted-foreground">
             No products found for &quot;{query}&quot;. Try a different search.

@@ -1,6 +1,6 @@
 "use client";
 
-import { Products } from "@/lib/types/types";
+import { Product } from "@/lib/types/types";
 import { Badge } from "../../../ui/badge";
 import Image from "next/image";
 import StarRating from "../../../StarRating";
@@ -11,7 +11,7 @@ import { toast } from "sonner";
 import { Star } from "lucide-react";
 
 interface ProductDetailsClientProps {
-  product: Products;
+  product: Product;
 }
 
 export default function ProductDetailsClient({
