@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
-import { Products } from "@/lib/types/types";
+import { Product } from "@/lib/types/types";
 
 export default function CartAside() {
   const { isOpen, close } = useSidebarMenu();
@@ -26,7 +26,7 @@ export default function CartAside() {
     toast.success(`${title} removed from cart`);
   };
 
-  const hasDiscount = (product: Products) => {
+  const hasDiscount = (product: Product) => {
     return product.discountedPrice < product.price;
   };
 

@@ -1,6 +1,6 @@
-import { Products, RootObject } from "../types/types";
+import { Product, RootObject } from "../types/types";
 
-export async function fetchProducts(): Promise<Products[]> {
+export async function fetchProducts(): Promise<Product[]> {
   const response = await fetch(
     `${process.env.API_BASE_URL}${process.env.ALL_PRODUCTS_ENDPOINT}`,
   );
@@ -14,7 +14,7 @@ export async function fetchProducts(): Promise<Products[]> {
   return json.data;
 }
 
-export async function fetchProductById(id: string): Promise<Products> {
+export async function fetchProductById(id: string): Promise<Product> {
   const response = await fetch(
     `${process.env.API_BASE_URL}${process.env.ALL_PRODUCTS_ENDPOINT}/${id}`,
   );
@@ -23,6 +23,6 @@ export async function fetchProductById(id: string): Promise<Products> {
     throw new Error("Failed to fetch product");
   }
 
-  const json: { data: Products } = await response.json();
+  const json: { data: Product } = await response.json();
   return json.data;
 }

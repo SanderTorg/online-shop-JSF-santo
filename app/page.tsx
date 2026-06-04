@@ -1,9 +1,9 @@
 import ProductList from "@/components/pages/home/ProductList";
 import { fetchProducts } from "@/lib/services/api";
-import { Products } from "@/lib/types/types";
+import { Product } from "@/lib/types/types";
 
 export default async function Home() {
-  let products: Products[] = [];
+  let products: Product[] = [];
   try {
     products = await fetchProducts();
   } catch (error) {
